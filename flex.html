@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 父元素设置flex子元素的float失效 -->
+    <style>
+            .clearfix：after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .content{
+                width: 500px;
+                height: 500px;
+                border: 1px solid #17C6E0;
+                margin: 0 auto;
+          } 
+          .fll{
+              width: 200px;
+              height: 200px;
+              border: 1px solid #31ED0A;
+          }
+        </style>
+         <!-- flex设置浮动但浮动无效 -->
+    <style>
+            .content{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+          .fll{
+              float: right;
+          } 
+       </style>
+</head>
+<body>
+    <div class="content clearfix">
+      <div class="fll">
+       <h2>子元素</h1>
+        </div>
+    </div> 
+       
+</body>
+</html>

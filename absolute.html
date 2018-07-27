@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 绝对定位设置浮动但浮动无效 -->
+    <style>
+        /* one  margin: auto;必须加*/
+        .clearfix：after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .content{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            position: relative;
+      } 
+      .fll{
+          width: 200px;
+          height: 200px;
+          border: 1px solid #31ED0A;
+      }
+       
+    </style>
+  <!-- <style>
+         .content{
+            position: relative;
+      } 
+      .fll{
+          float: right;
+          position: absolute;
+          left: 0 ;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto; 
+      }
+ 
+  </style> -->
+    <!-- <style>
+         /* 有兼容性问题的 */
+      .content{
+         position: relative;
+      } 
+      .fll{
+          float: right;
+          position: absolute;
+          left:50% ;
+          top: 50% ;
+          transform: translate(-50%,-50%);
+      }
+    </style> -->
+     <!-- <style>
+         /*  必须知道子元素的高宽  */
+    /* 一定要加上 margin-top、margin-left:负的子元素的一半*/
+      .content{
+         position: relative;
+      } 
+      .fll{
+          float: right;
+          position: absolute;
+          left: 50% ;
+          top: 50%;
+          margin-top:-100px;
+          margin-left:-100px;
+      }
+    </style> -->
+    <style>
+          /*父子高宽都要知道 */
+        /* [(父（宽、高）-子（宽、高）)/2]/ (父（宽、高）)*/
+     
+      .content{
+         position: relative;
+      } 
+      .fll{
+          float: right;
+          position: absolute;
+          left: 30% ;
+          top: 30%;
+      } 
+    </style>    
+</head>
+<body>
+    <div class="content clearfix">
+        <div class="fll">
+            <h2>子元素</h1>
+        </div>
+    </div> 
+</bod>
+</html>

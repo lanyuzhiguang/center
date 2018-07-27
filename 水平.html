@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .clearfix：after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .content{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #17C6E0;
+            margin: 0 auto;
+      } 
+      .fll{
+          width: 200px;
+          height: 200px;
+          border: 1px solid #31ED0A;
+      }
+    </style>
+      <!--仅水平  -->
+      <!-- <style>
+            .content{
+                text-align: center
+                  }
+            .fll{
+                display: inline-block;
+            }
+         </style> -->
+         <style>
+                .fll{
+                margin: 0 auto;
+            }
+         </style>  
+</head>
+<body>
+    <div class="content clearfix">
+        <div class="fll">
+            <h2>子元素</h1>
+        </div>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> 
+    <!--   父元素设置display:table-cell;父元素margin就失效了-->
+    <!-- 加浮动水平失效 -->
+    <style>
+            .clearfix：after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .content{
+                width: 500px;
+                height: 500px;
+                border: 1px solid #17C6E0;
+                margin: 0 auto;
+          } 
+          .fll{
+              width: 200px;
+              height: 200px;
+              border: 1px solid #31ED0A;
+          }
+        </style>
+    <style>
+            .content{
+            display:table-cell;
+            vertical-align: middle
+         } 
+         .fll{
+            margin: 0 auto;
+         } 
+       </style>
+</head>
+<body>
+        <div class="content clearfix">
+                <div class="fll">
+                    <h2>子元素</h1>
+                </div>
+            </div>   
+</body>
+</html>
