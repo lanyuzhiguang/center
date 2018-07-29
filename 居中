@@ -1,0 +1,131 @@
+一、水平垂直
+A、flex设置浮动的话浮动无效
+第一个
+<!-- 父元素设置flex子元素的float失效 -->
+     .content{
+           display: flex;
+           justify-content: center;（水平）
+           align-items: center;（垂直）
+       }
+       .fll{
+           float: right;
+       }
+.缺点设置的浮动无效、有兼容性问题的
+B、table-cell
+第二个
+<!--   父元素设置display:table-cell;父元素margin就失效了父元素必须设置height-->
+    <!-- 加浮动水平失效 -->
+      .content{
+         display:table-cell;
+         vertical-align: middle
+      } 
+      .fll{
+margin: 0 auto }
+有浮动的话只能实现垂直方向的居中要实现水平不能设置浮动
+C、绝对定位设置浮动的话浮动无效
+第三个
+.content{
+         position: relative;
+      } 
+      .fll{
+          float: right;
+          position: absolute;
+          left: 0 ;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto; 
+      } 
+第四个
+.content{
+         position: relative;
+      } 
+      .fll{
+          float: right;
+          position: absolute;
+          left:50% ;
+          top: 50% ;
+          transform: translate(-50%,-50%);
+      }
+浮动无效、有兼容性问题的、transform: translate(-50%,-50%);必须加，
+第六个
+             .content{
+         position: relative;
+      } 
+      .fll{
+          float: right;
+          position: absolute;
+          left: 50% ;
+          top: 50%;
+          margin-top:-100px;
+          margin-left:-100px;
+      } */
+必须知道子元素的宽高 */
+/* 一定要加上 margin-top、margin-left:负的子元素值的一半[-(200-100)]; 浮动无效、上一个例子的变形
+第五个
+/* [(父（宽、高）-子（宽、高）)/2]/ (父（宽、高）)*/
+      .content{
+         position: relative;
+      } 
+      .fll{
+          float: right;
+          position: absolute;
+          left: 30% ;
+          top: 30%;
+      } 
+父元素子元素高宽都要知道，要计算   
+二仅水平（不能有浮动）
+第七个（有浮动就失效）
+        .content{} 
+      .fll{
+          margin: 0 auto;
+      } 
+第九个
+       .content{
+           text-align: center
+       }
+       .fll{
+           display: inline-block;
+       }
+
+三浮动有效实现垂直居中
+
+第九个（在父元素设置的）
+  .content{
+         display:table-cell;
+         vertical-align: middle
+      } 
+      .fll{
+          float: right;
+      } 
+  <!--  设置 display:table-cell;margin就失效了-->
+   <!--父元素必须设置高度，height -->
+    <!-- 加浮动水平失效 -->
+附录
+HTML代码
+<body>
+    <div class="content clearfix">
+        <h1>父元素</h1>
+        <div class="fll">
+            <h2>子元素</h1>
+        </div>
+    </div> 
+</body>
+
+.clearfix：after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .content{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #17C6E0;
+      } 
+      .fll{
+          width: 200px;
+          height: 200px;
+          border: 1px solid #31ED0A;
+          }
+
+
